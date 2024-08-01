@@ -67,6 +67,10 @@ select option{
     padding: 10px;
 }
 
+select option [value="EUR"]{
+    background-image: url(./img/eur-30.png);
+}
+
 input[type="submit"]{
     background-color: #CFB97D;
     color: #fff;
@@ -89,4 +93,17 @@ footer{
 }
 
 /* CLASES Y IDs*/
+.flags{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;    
+}
 
+#error{
+    color: #80724B;
+    text-align: left;
+    width: 400px;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 20px;
+}

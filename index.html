@@ -17,9 +17,14 @@
         <img src="./img/cabecera-2.jpg" alt="Imagen de cabecera"> 
         <h1>Conversor de monedas</h1>
     </header>
-    <!-- FORMULARIO -->
+    <!-- CONTENIDO PRINCIPAL -->
     <main>
-        <form action="#" id="form">
+        <!--Mensaje de error-->
+        <div>
+            <p id="error"></p>
+        </div>
+        <!--Formulario-->
+        <form action="index.html" id="form">
             <div class="itemform">
                 <label for="entryCoin">Moneda de entrada</label>
                 <select name="entryCoin" id="entryCoin" required>
@@ -30,15 +35,9 @@
                     <option value="JPY">Yen (¥)</option>
                 </select>
             </div>
-            <div id="flags">
-                <img src="img/eur-30.png" value="EUR">
-                <img src="img/usd-30.png" value="USD">
-                <img src="img/gbp-30.png" value="GBP">
-                <img src="img/jpy-30.png" value="JPY">
-            </div>
             <div class="itemform">
                 <label for="amountMoney">Importe</label>
-                <input type="number" name="amountMoney" id="amountMoney" min="0"    required>
+                <input type="number" name="amountMoney" id="amountMoney" min="1" required>
             </div>
             <div class="itemform">
                 <label for="exitCoin">Moneda a convertir</label>
@@ -51,7 +50,7 @@
                 </select>
             </div>
             <div class="itemform">
-                <input type="submit" value="CONVERTIR" id="conversionButton">
+                <input type="submit" value="CONVERTIR" id="convertButton">
             </div>
         </form>
     </main>
