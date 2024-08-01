@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Conversor de monedas</title>
+</head>
+
+<body>
+    <!-- CABECERA -->
+    <header>
+        <img src="./img/cabecera-2.jpg" alt="Imagen de cabecera"> 
+        <h1>Conversor de monedas</h1>
+    </header>
+    <!-- FORMULARIO -->
+    <main>
+        <form action="#" id="form">
+            <div class="itemform">
+                <label for="entryCoin">Moneda de entrada</label>
+                <select name="entryCoin" id="entryCoin" required>
+                    <option value="0">--Selecciona una moneda--</option>
+                    <option value="EUR" class="flag-eur">Euro (€)</option>
+                    <option value="USD">Dólar estadounidense ($)</option>
+                    <option value="GBP">Libra esterlina (£)</option>
+                    <option value="JPY">Yen (¥)</option>
+                </select>
+            </div>
+            <div id="flags">
+                <img src="img/eur-30.png" value="EUR">
+                <img src="img/usd-30.png" value="USD">
+                <img src="img/gbp-30.png" value="GBP">
+                <img src="img/jpy-30.png" value="JPY">
+            </div>
+            <div class="itemform">
+                <label for="amountMoney">Importe</label>
+                <input type="number" name="amountMoney" id="amountMoney" min="0"    required>
+            </div>
+            <div class="itemform">
+                <label for="exitCoin">Moneda a convertir</label>
+                <select name="exitCoin" id="exitCoin" required>
+                    <option value="0">--Selecciona una moneda--</option>
+                    <option value="EUR">Euro (€)</option>
+                    <option value="USD">Dólar estadounidense ($)</option>
+                    <option value="GBP">Libra esterlina (£)</option>
+                    <option value="JPY">Yen (¥)</option>
+                </select>
+            </div>
+            <div class="itemform">
+                <input type="submit" value="CONVERTIR" id="conversionButton">
+            </div>
+        </form>
+    </main>
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>Conversor de monedas</p>
+    </footer>
+    <!-- CÓDIGO JAVASCRIPT -->
+    <script src="./js/app.js"></script>
+</body>
+</html>

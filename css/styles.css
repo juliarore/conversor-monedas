@@ -1,0 +1,92 @@
+/* ELEMENTOS GENERALES */
+body{
+    font-family: "Montserrat", sans-serif;
+    background-color: #F5F5EB;
+}
+
+header{
+    position: relative;
+    width: 1223px;
+    height: 500px;
+    margin: 0px 100px 0px 100px;
+}
+
+
+header h1{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;    
+    font-weight: 400;
+    margin-top: -50px;
+}
+
+main{
+    width: 300px;
+    margin: 30px auto 0px auto;
+}
+
+form{
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+input{
+    font-family: "Montserrat", sans-serif;
+    display: inline;
+    width: 268px;
+    border: 1px solid #dfdfdd;
+    padding: 10px;
+    border-radius: 5px 5px 5px 5px;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+select{
+    font-family: "Montserrat", sans-serif;
+    width: 290px;
+    border: 1px solid #dfdfdd;
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: 18px;
+    padding: 10px;
+}
+
+select option{
+    font-size: 18px;
+    font-weight: 300;
+    padding: 10px;
+}
+
+input[type="submit"]{
+    background-color: #CFB97D;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 10px;
+    width: 290px;
+}
+
+input[type="submit"]:hover{
+    background-color: #80724B;
+    border: 1px solid #CFB97D;
+    cursor: pointer;
+}
+
+footer{
+    text-align: center;
+    width: 300px;
+    margin: 30px auto 30px auto;
+    font-weight: 100;
+}
+
+/* CLASES Y IDs*/
+
