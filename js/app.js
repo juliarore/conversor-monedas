@@ -5,9 +5,11 @@ const entryCoin = document.getElementById("entryCoin");
 const exitCoin = document.getElementById("exitCoin");
 const amountMoney = document.getElementById("amountMoney");
 const error = document.getElementById("error");
+const result = document.getElementById("result");
 
 // Funciones de evento
 function checkForm (event){
+    error.innerText = ''; // Limpiamos errores previos
     if (entryCoin.value == "0") {
         entryCoin.focus();
         event.preventDefault();
@@ -28,37 +30,50 @@ function checkForm (event){
     }
 }
 
-function convertCoin (entryCoin, amountMoney, exitCoin){
-    if (entryCoin.value == "EUR" && exitCoin.value == "USD") {
-        return amountMoney.value * 1.0789;
-    } else if (entryCoin.value == "EUR" && exitCoin.value == "GBP") {
-        return amountMoney.value * 0.8501;
-    } else if (entryCoin.value == "EUR" && exitCoin.value == "JPY") {
-        return amountMoney.value * 167.61;
-    } else if (entryCoin.value == "USD" && exitCoin.value == "EUR") {
-        return amountMoney.value * 0.9211;
-    } else if (entryCoin.value == "USD" && exitCoin.value == "GBP") {
-        return amountMoney.value * 0.786;
-    } else if (entryCoin.value == "USD" && exitCoin.value == "JPY") {
-        return amountMoney.value * 155.00;
-    } else if (entryCoin.value == "GBP" && exitCoin.value == "EUR") {
-        return amountMoney.value * 1.15;
-    } else if (entryCoin.value == "GBP" && exitCoin.value == "USD") {
-        return amountMoney.value * 1.21;
-    } else if (entryCoin.value == "GBP" && exitCoin.value == "JPY") {
-        return amountMoney.value * 196.98;
-    } else if (entryCoin.value == "JPY" && exitCoin.value == "EUR") {
-        return amountMoney.value * 0.0077;
-    } else if (entryCoin.value == "JPY" && exitCoin.value == "USD") {
-        return amountMoney.value * 0.0075;
-    } else if (entryCoin.value == "JPY" && exitCoin.value == "GBP") {
-        return amountMoney.value * 0.0065;
+function convertCoin(entryCoinValue, amountMoneyValue, exitCoinValue) {
+    // EUR como moneda de entrada
+    if (entryCoinValue == "EUR" && exitCoinValue == "USD") {
+        return amountMoneyValue * 1.0789;
+    } else if (entryCoinValue == "EUR" && exitCoinValue == "GBP") {
+        return amountMoneyValue * 0.8501;
+    } else if (entryCoinValue == "EUR" && exitCoinValue == "JPY") {
+        return amountMoneyValue * 167.61;
+    // USD como moneda de entrada
+    } else if (entryCoinValue == "USD" && exitCoinValue == "EUR") {
+        return amountMoneyValue * 0.9211;
+    } else if (entryCoinValue == "USD" && exitCoinValue == "GBP") {
+        return amountMoneyValue * 0.786;
+    } else if (entryCoinValue == "USD" && exitCoinValue == "JPY") {
+        return amountMoneyValue * 155.00;
+    // GBP como moneda de entrada
+    } else if (entryCoinValue == "GBP" && exitCoinValue == "EUR") {
+        return amountMoneyValue * 1.15;
+    } else if (entryCoinValue == "GBP" && exitCoinValue == "USD") {
+        return amountMoneyValue * 1.21;
+    } else if (entryCoinValue == "GBP" && exitCoinValue == "JPY") {
+        return amountMoneyValue * 196.98;
+    // JPY como moneda de entrada    
+    } else if (entryCoinValue == "JPY" && exitCoinValue == "EUR") {
+        return amountMoneyValue * 0.0077;
+    } else if (entryCoinValue == "JPY" && exitCoinValue == "USD") {
+        return amountMoneyValue * 0.0075;
+    } else {
+        return amountMoneyValue * 0.0065;
     }
 }
 
-// Inicio de carga de eventos
-form.addEventListener('submit', checkForm);
-form.addEventListener('submit', convertCoin);
+function printResult(entryCoin, amountMoney, exitCoin) {
+    // Llamamos a la función convertCoin y guardamos el resultado en una variable
+    const convertedAmount = convertCoin(entryCoin.value, amountMoney.value, exitCoin.value);
+    // Mostramos el resultado de la conversión en el elemento result 
+    result.innerText = `${amountMoney.value} ${entryCoin.value} equivalen a ${convertedAmount.toFixed(2)} ${exitCoin.value}.`; 
+}
 
-// Variables resultados 
-console.log(`${amountMoney} ${entryCoin} equivalen a ${convertCoin()} ${exitCoin}.`);
+// Inicio de carga de eventos
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevenimos el envío del formulario
+    // Si la validación del formulario es correcta (checkForm devuelve true), imprimimos el resultado de la conversión
+    if (checkForm(event)) {
+        printResult(entryCoin, amountMoney, exitCoin);
+    }
+});

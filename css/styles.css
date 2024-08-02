@@ -51,6 +51,12 @@ input{
     font-size: 18px;
 }
 
+input:focus {
+    outline: none;
+    border-color: #fff;
+    box-shadow: 0 0 8px #CFB97D;
+}
+
 select{
     font-family: "Montserrat", sans-serif;
     width: 290px;
@@ -61,15 +67,19 @@ select{
     padding: 10px;
 }
 
+
+select:focus {
+    outline: none;
+    border-color: #fff;
+    box-shadow: 0 0 8px #CFB97D;
+}
+
 select option{
     font-size: 18px;
     font-weight: 300;
     padding: 10px;
 }
 
-select option [value="EUR"]{
-    background-image: url(./img/eur-30.png);
-}
 
 input[type="submit"]{
     background-color: #CFB97D;
@@ -106,4 +116,13 @@ footer{
     font-weight: 400;
     font-size: 14px;
     margin-bottom: 20px;
+}
+
+#result {
+    color: #80724B;
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 20px;
+    white-space: nowrap;
 }
